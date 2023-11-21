@@ -1,0 +1,377 @@
+
+@mixin fz($fz_max, $fz_min, $w_max:1440, $w_min:375) {
+    font-size: calc(#{$fz_min/10}rem + ((1vw - #{$w_min/1000}rem) * #{($fz_max - $fz_min) / (($w_max / 100) - ($w_min / 100))}));
+    @media screen and (min-width: #{$w_max}px){
+        font-size: #{$fz_max/10}rem;
+    }
+    @media screen and (max-width: #{$w_min}px){
+        font-size: #{$fz_min/10}rem;
+    }
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size: inherit;
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+	width: 100%;
+}
+
+li {
+	list-style: none;
+}
+
+
+
+
+// .js-active {
+// 	transition: transform 3s cubic-bezier(0.230, 0.410, 0.000, 0.980);
+// 	transform: translate(0, 0);
+// 	&::before {
+// 		animation: cover 1.5s cubic-bezier(0.230, 0.410, 0.000, 0.980);
+// 	}
+// }
+
+
+
+
+.space {
+	height: 100vh;
+}
+.container {
+	.sample1 {
+		font-family: "Times New Roman", "游明朝", YuMincho, serif;
+		.content {
+			@media (min-width: 769px) {
+				
+					// margin-top: 100px;
+					// height: 500/960*100vw;
+					// max-height: 800px;
+					// padding: 100px 0;
+					// padding-top: 200/960*100%;
+					position: relative;
+		
+			}
+			.inner {
+				position: relative;
+				// height: 360/375*100vw;
+				height: auto;
+	
+				display: flex;
+				flex-direction: column;
+	
+				@media (min-width: 769px) {
+					// display: flex;
+					flex-direction: row;
+					// max-width: 1280px;
+					// padding-left: 70px;
+					// padding-left: 5%;
+					position: relative;
+					// height: 400/960*100vw;
+					height: 500/960*100vw;
+					// max-height: 400px;
+				}
+				&::before {
+					// content: url('../assets/img/stas-ostrikov-32nRyuXamvQ-unsplash.jpg');
+					// content: '';
+					display: block;
+					// width: 1200/1280*100%;
+	
+					background: url('../assets/img/Ibaraki_Kasugaoka_Church_light_cross.jpeg') no-repeat;
+					background-size: cover;
+					// background: #000;
+		
+					width: 900/960*100%;
+					height: 400/960*100vw;
+					
+					margin-right: auto;
+	
+					position: relative;
+					// position: absolute;
+					// top: 0;
+					// right: 0;
+					// left: 361/960*100vw;
+					z-index: -1;
+					@media (min-width: 769px) {
+						
+						// width: 900/960*100%;
+						// width: 1280/1440*100%;
+						width: 80%;
+						width: 60%;
+						// width: 100%;
+						// height: 100%;
+						height: 400/960*100vw;
+		
+						// margin: 0 auto;
+						// margin-left: auto;
+	
+						// margin-right: auto;
+					}
+				}
+				&::after {
+					// content: url('../assets/img/stas-ostrikov-32nRyuXamvQ-unsplash.jpg');
+					content: '';
+					display: block;
+					// width: 1200/1280*100%;
+	
+					// background: url('../assets/img/stas-ostrikov-32nRyuXamvQ-unsplash.jpg') no-repeat;
+					// background-size: cover;
+					background: #7979792b;
+		
+					// width: 900/960*100%;
+					width: 96%;
+					height: 600/960*100vw;
+	
+	
+					transform-origin: right;
+					transform: scaleX(0);
+					
+					margin-right: auto;
+	
+	
+					position: absolute;
+					bottom: 0;
+					// left: 0;
+					right: 0;
+	
+	
+					// position: relative;
+					// position: absolute;
+					// top: 0;
+					// left: 0;
+					// left: 361/960*100vw;
+					z-index: -2;
+					@media (min-width: 769px) {
+						
+						// width: 900/960*100%;
+						// width: 1280/1440*100%;
+						// width: 80%;
+						width: 90%;
+						// width: 100%;
+						// height: 100%;
+						height: 440/960*100vw;
+		
+						// margin: 0 auto;
+						// margin-left: auto;
+	
+						// margin-right: auto;
+	
+	
+					}
+					
+				}
+				&.js-active {
+					&::after {
+						transition: transform .5s cubic-bezier(0.230, 0.410, 0.000, 0.980) .2s;
+						// transform: translateY(-100%);
+						transform: scaleX(1);
+					}
+				}
+			}
+			&-image {
+				overflow: hidden;
+				width: 900/960*100%;
+				width: 90%;
+				height: 460/960*100vw;
+				
+				margin-right: auto;
+		
+	
+	
+				position: relative;
+				// position: absolute;
+				// top: 0;
+				// right: 0;
+				// left: 361/960*100vw;
+				// z-index: -1;
+				@media (min-width: 769px) {
+					
+					// width: 900/960*100%;
+					// width: 1280/1440*100%;
+					width: 80%;
+					width: 60%;
+					// width: 100%;
+					// height: 100%;
+					height: 400/960*100vw;
+		
+					// margin: 0 auto;
+					// margin-left: auto;
+		
+					// margin-right: auto;
+				}
+	
+	
+	
+				&.js-active {
+					// transition: transform 3s cubic-bezier(0.230, 0.410, 0.000, 0.980) .5s;
+					// transform: translateY(0px);
+					&::before {
+						transition: transform .5s cubic-bezier(0.230, 0.410, 0.000, 0.980) .2s;
+						transform: translateY(-100%);
+					}
+					img {
+						transition: transform 1.5s cubic-bezier(0.230, 0.410, 0.000, 0.980) .2s;
+						// transform: scale(1);
+						transform: translate(-50%,-50%) scale(1);
+					}
+				}
+				&::before {
+					content: '';
+					display: block;
+					width: 100%;
+					height: 100%;
+					background: #ffffff;
+					transform: translateY(0);
+					// transform-origin: top;
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 1;
+				}
+				// img {
+				// 	transform: scale(1.2);
+				// }
+	
+				img {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%,-50%) scale(1.2);
+				}
+			}
+	
+			&-textArea {
+				// color: #e1e1e1;
+				margin-left: auto;
+				
+				padding: 20/375*100vw;
+				width: 300/375*100vw;
+				// background: #fff;
+				// background: #0a294c;
+	
+	
+				// top: 0;
+				@media (min-width: 769px) {
+	
+					margin: 0;
+					// width: 460/960*100%;
+					// width: 400/960*100%;
+					width: 40%;
+					padding: 40/960*100%;
+			
+					// transform: translateY(100px);
+			
+					position: absolute;
+					right: 0;
+					bottom: 0;
+	
+					// position: relative;
+					// position: absolute;
+					// top: 200/400*100%;
+					// top: 50%;
+					// bottom: -100/400*100%;
+					// left: 360/960*100vw;
+					// right: 0;
+					// bottom: 0;
+					// z-index: 2;
+				}
+				&__title {
+					@include fz(36, 24);
+					letter-spacing: .18em;
+	
+					// font-weight: bold;
+					// background: #f6f1f1;
+					opacity: 0;
+					transform: translate(0, 10px);
+					&.js-active {
+						transition: all 1.5s cubic-bezier(0.230, 0.410, 0.000, 0.980);
+						opacity: 1;
+						transform: translate(0, 0);
+					}
+					@media (min-width: 769px) {
+						// font-size: 36px;
+						margin-bottom: 40/500*100%;
+					}
+				}
+				&__text {
+					@include fz(18, 14);
+					letter-spacing: .18em;
+	
+					// background: #e1e1e1;
+	
+					opacity: 0;
+					transform: translate(0, 10px);
+					@media (min-width: 769px) {
+						// line-height: 1.6;
+						line-height: 2;
+						// font-size: 18px;
+	
+					}
+					&.js-active {
+						transition: all 1.5s cubic-bezier(0.230, 0.410, 0.000, 0.980);
+						opacity: 1;
+						transform: translate(0, 0);
+					}
+				}
+			}
+		
+		}
+
+		&:nth-child(2)  {
+			margin-top: 200/960*100vw;
+			@media (min-width: 769px) {
+				margin-top: 100/960*100vw;
+			}
+			.content {
+				.inner {
+					&::before {
+						margin-left: auto;
+					}
+					&::after {
+						transform-origin: left;
+						margin-left: auto;
+						left: 0;
+						right: auto;
+					}
+				}
+				&-image {
+					margin: 0;
+					margin-left: auto;
+					&::before {
+						right: 0;
+					}
+				}
+				&-textArea {
+					margin-right: auto;
+					@media (min-width: 769px) {
+						left: 0;
+					}
+
+				}
+			
+			}
+		}
+
+	}
+
+
+}
